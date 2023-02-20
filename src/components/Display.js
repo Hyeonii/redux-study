@@ -3,14 +3,14 @@ import { connect } from 'react-redux'
 
 const Display = ({count}) => {
     return (
-        <div>판매된 고구마 {count}개</div>
+        <h5>판매 예정 고구마 {count}개</h5>
     )
 }
 
-const mapSateToProps = (state) => {
-    // state.default안에 count가 담겨져 있다.
+const mapSateToProps = ({goguma}) => {
+
     return {
-        count: state.default.count
+        count: goguma.count
     }
 }
 

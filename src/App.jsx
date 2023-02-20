@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // redux
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './redux/store';
 // components
 import Gogumas from './components/Gogumas';
 import Display from './components/Display';
+import Likes from './components/Likes';
 // import './App.css';
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
             <div className='app'>
                 <Gogumas />
                 <Display />
+                <Likes />
             </div>
         </Provider>
     )
