@@ -2,3 +2,4 @@
 // 기존: redux/gogumas/actions ==> /redux
 export { buyGoguma, refundGoguma } from "./gogumas/actions";
 export { addLikes, cancelLikes } from "./likes/actions";
+export { fetchComments } from "./comments/actions";
