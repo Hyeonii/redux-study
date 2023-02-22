@@ -1,25 +1,24 @@
-import { BUY_GOGUMA, REFUND_GOGUMA } from "./type"
+import { BUY_GOGUMA, REFUND_GOGUMA } from "./type";
 
 const gogumaState = {
-    count: 200
-}
+    count: 200,
+};
 
-const gogumaReducer = (state = gogumaState,  action) => {
-
+const gogumaReducer = (state = gogumaState, action) => {
     switch (action.type) {
         case BUY_GOGUMA:
             return {
                 ...state,
-                count: state.count + 1
-            }
+                count: state.count + action.payload,
+            };
         case REFUND_GOGUMA:
             return {
                 ...state,
-                count: state.count - 1
-            }
-        default: 
+                count: state.count - 1,
+            };
+        default:
             return state;
     }
-}
+};
 
 export default gogumaReducer;

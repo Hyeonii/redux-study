@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { addLikes, cancelLikes} from '../redux/likes/actions';
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { addLikes, cancelLikes } from "../redux";
 
-const likes = ({count, addLikes, cancelLikes}) => {
-    const [likeBtnOn, setLikeBtnOn] = useState(false)
+const likes = ({ count, addLikes, cancelLikes }) => {
+    const [likeBtnOn, setLikeBtnOn] = useState(false);
 
     const handleLikeBtn = () => {
-
         if (likeBtnOn) {
             setLikeBtnOn(false);
             cancelLikes();
@@ -14,27 +13,27 @@ const likes = ({count, addLikes, cancelLikes}) => {
             setLikeBtnOn(true);
             addLikes();
         }
-    }
+    };
 
     return (
-        <div className='items'>
-            <h4>{likeBtnOn ? '💓' : '🤍'} {count}</h4>
+        <div className="items">
+            <h4>
+                {likeBtnOn ? "💓" : "🤍"} {count}
+            </h4>
             <button onClick={handleLikeBtn}>좋아요</button>
         </div>
-    )
-}
+    );
+};
 
-
-const mapSateToProps = ({like}) => {
-    
+const mapSateToProps = ({ like }) => {
     return {
-        count: like.count
-    }
-}
+        count: like.count,
+    };
+};
 
 const mapDispatchToFunction = {
     addLikes,
-    cancelLikes
-}
+    cancelLikes,
+};
 
 export default connect(mapSateToProps, mapDispatchToFunction)(likes);
